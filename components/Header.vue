@@ -6,7 +6,6 @@
         <Menu class="absolute left-4 top-0 h-full" />
 
         <div class="flex items-center justify-center">
-          <Car />
           <LogoTitle />
         </div>
       </div>
@@ -19,10 +18,9 @@
 
 <script>
 import Menu from "./svg/Menu";
-import Car from "./svg/Car";
 import LogoTitle from "./svg/LogoTitle";
 
 export default {
-  components: { Menu, Car, LogoTitle },
+  components: { Menu, LogoTitle },
 };
 </script>

@@ -2,8 +2,10 @@
   <div>
     <Header />
 
-    <div class="pt-14">
+    <div class="w-full min-h-screen pt-14">
       <Nuxt />
     </div>
+
+    <Footer />
   </div>
 </template>
