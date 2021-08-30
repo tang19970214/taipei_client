@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full fixed bottom-0 z-40">
+  <div class="w-full fixed bottom-0 z-10">
     <!-- phone -->
     <div class="block md:hidden h-12">
       <div class="relative w-full h-full bg-white flex items-end justify-around">
