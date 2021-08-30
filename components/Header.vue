@@ -3,7 +3,7 @@
     <!-- phone -->
     <div class="block md:hidden h-full">
       <div class="relative w-full h-full bg-primary flex items-center justify-center">
-        <div @click="overlay = true">
+        <div @click="overlay = !overlay">
           <Menu class="absolute left-4 top-0 h-full" />
         </div>
 
@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <PhoneMenu v-if="overlay" @closeOverlay="overlay = false" />
+    <PhoneMenu :overlay="overlay" @closeOverlay="overlay = false" />
 
     <!-- web -->
     <div class="hidden md:block w-full h-full"></div>
