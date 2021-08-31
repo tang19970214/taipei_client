@@ -1,8 +1,8 @@
-// import Vuex from 'vuex'
 import { getToken, setToken, removeToken } from '../api/auth'
+import $api from '../api/api'
 
 export const state = () => ({
-  token:null,
+  token: null,
 })
 
 export const  mutations = {
@@ -15,8 +15,20 @@ export const  mutations = {
 }
 
 export const actions = {
-  test (){
-    console.log(getToken,setToken,removeToken);
+  Login({commit}, userInfo) {
+    return new Promise((resolve, reject) => {
+      $api.login(userInfo.username, userInfo.password)
+        .then((response) => {
+          const data = response.data
+          setToken(data.token)
+          window.localStorage.setItem("tokenClient", data.token)
+          commit("SET_TOKEN", data.token)
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
   },
   authenticateUser(vuexContext, authData){
     vuexContext.commit('setToken',result.idToken)

@@ -56,5 +56,3 @@ export default {
     middleware: ['log','authorization']
   }
 }
-// H224560094
-// 19970101

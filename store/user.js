@@ -1,4 +1,3 @@
-// import Vuex from 'vuex'
 import { getToken, setToken, removeToken } from '../api/auth'
 
 export const state = () => ({
@@ -15,9 +14,6 @@ export const  mutations = {
 }
 
 export const actions = {
-  test (){
-    console.log(getToken,setToken,removeToken);
-  },
   authenticateUser(vuexContext, authData){
     vuexContext.commit('setToken',result.idToken)
     localStorage.setItem('token', result.idToken)
