@@ -1,3 +1,6 @@
+*{
+  // outline: 1px solid red;
+}
 .min-h-page {
   min-height: calc(100vh - 56px);
 }
@@ -6,9 +9,18 @@
   transition: all 0.3s linear;
   transform: translateX(0);
 }
- .moveR-enter,  .moveR-leave {
+.moveR-enter,  .moveR-leave {
   transform: translateX(-100%);
 }
- .moveR-leave-to{
-   transform: translateX(-100%);
- }
+.moveR-leave-to{
+  transform: translateX(-100%);
+}
+
+.opacityTransition-enter-active,
+.opacityTransition-leave-active {
+  transition: opacity 0.5s;
+}
+.opacityTransition-enter,
+.opacityTransition-leave-active {
+  opacity: 0;
+}

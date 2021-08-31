@@ -13,6 +13,7 @@
         <div class="w-full flex items-center justify-end mt-2">
           <a class="text-mainTxt text-sm mr-2">註冊</a>
           <a class="text-mainTxt text-sm">忘記密碼？</a>
+          <span @click="asdasd">test</span>
         </div>
 
         <ol class="text-sm mt-2 text-gray-500 list-square ml-5 tracking-wider">
@@ -27,6 +28,14 @@
 <script>
 export default {
   name: "login",
+  middleware: ['authorization'],
+  methods: {
+    asdasd() {
+      console.log('test');
+      this.$store.dispatch('test')
+      this.$store.dispatch('user/test')
+    }
+  },
 };
 </script>
 
