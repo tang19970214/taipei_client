@@ -40,6 +40,7 @@ export const actions = {
       if(!req.headers.cookie){
         return;
       }
+      console.log(req);
       const jwtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith("taipei_client="))
       if(!jwtCookie) return
       token = jwtCookie.split('=')[1]

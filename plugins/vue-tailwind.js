@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueTailwind from 'vue-tailwind'
 
-// import Taiwan from 'vue-tailwind/dist/l10n/zh-tw'
+import Taiwan from 'vue-tailwind/dist/l10n/zh-tw'
 
 import {
   TInput,
@@ -49,7 +49,7 @@ const setting = {
     component: TDatepicker,
     props: {
       // classed: 'w-full rounded-sm border-gray-300 p-1',
-      // locale: Taiwan
+      locale: Taiwan
     }
   }
 }

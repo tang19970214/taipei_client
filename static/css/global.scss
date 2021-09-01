@@ -9,7 +9,7 @@
 }
 
 .moveR-enter-active,  .moveR-leave-active {
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
   transform: translateX(0);
 }
 .moveR-enter,  .moveR-leave {
@@ -21,7 +21,7 @@
 
 .opacityTransition-enter-active,
 .opacityTransition-leave-active {
-  transition: opacity 0.5s;
+  transition: opacity 0.3s;
 }
 .opacityTransition-enter,
 .opacityTransition-leave-active {
