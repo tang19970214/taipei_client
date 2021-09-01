@@ -10,6 +10,11 @@
         <div class="flex items-center justify-center">
           <LogoTitle />
         </div>
+
+        <div v-if="$route.path !== '/'" class="absolute top-0 right-4 h-full flex items-center" @click="$router.push('/')">
+          <img src="../static/images/login.svg" alt="登入" width="16px">
+          <p class="text-white text-sm pl-1">登入</p>
+        </div>
       </div>
     </div>
 

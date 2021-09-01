@@ -7,9 +7,7 @@
       </div>
 
       <!-- tabs -->
-      <div class="w-full bg-white flex items-center">
-        <div class="px-4 py-3 border-b-2 box-border text-sm" :class="{'border-line text-line': item.id == defaultTab, 'border-white': item.id !== defaultTab}" v-for="item in tabsList" :key="item.id" @click="changeTab(item)">{{item.title}}</div>
-      </div>
+      <Tabs :tabsList="tabsList" :defaultTab="defaultTab" @changeTab="changeTab" />
 
       <!-- list -->
       <div class="w-full min-h-list" v-if="list.length > 0">

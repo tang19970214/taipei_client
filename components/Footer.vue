@@ -37,7 +37,7 @@ export default {
           menuImg: require("../static/images/menu/reserve.svg"),
           menuImg_hover: require("../static/images/menu/reserve_hover.svg"),
           title: "預約訂車",
-          pathName: "reserve",
+          pathName: "reserve-index",
         },
         {
           id: 3,
