@@ -5,8 +5,8 @@
       <div class="relative w-full h-full bg-white flex items-end justify-around">
 
         <div class="w-full h-full box-border flex items-center justify-center flex-col border-b-2" :class="{'border-line': item.pathName == $route.name, 'border-white': item.pathName !== $route.name}" v-for="item in phoneMenu" :key="item.id" @click="$router.push({name: item.pathName})">
-          <img v-if="item.pathName == $route.name" :src="item.menuImg_hover" :alt="item.title" width="20px">
-          <img v-else :src="item.menuImg" :alt="item.title" width="20px">
+          <img v-if="item.pathName == $route.name" :src="item.menuImg_hover" :alt="item.title" width="20px" />
+          <img v-else :src="item.menuImg" :alt="item.title" width="20px" />
           <span class="text-sm" :class="{'text-line': item.pathName == $route.name, 'text-gray-500': item.pathName !== $route.name}">{{item.title}}</span>
         </div>
       </div>

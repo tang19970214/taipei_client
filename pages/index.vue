@@ -6,8 +6,8 @@
         <p class="text-mainTxt text-sm pt-2 pb-4">為了保障您的帳號安全，建議您最少於三個月變更一次密碼。</p>
         <p class="text-mainTxt text-sm pt-2 pb-4">密碼預設為生日，格式YYYYMMDD</p>
 
-        <t-input placeholder="請輸入您的帳號" v-model.trim="form.username"></t-input>
-        <t-input placeholder="請輸入您的密碼" v-model.trim="form.password"></t-input>
+        <t-input placeholder="請輸入您的帳號" v-model.trim="userInfo.username"></t-input>
+        <t-input placeholder="請輸入您的密碼" v-model.trim="userInfo.password"></t-input>
         <t-button-primary type="submit">登入</t-button-primary>
 
         <div class="w-full flex items-center justify-end mt-2">
@@ -16,8 +16,8 @@
         </div>
 
         <ol class="text-sm mt-2 text-gray-500 list-square ml-5 tracking-wider">
-          <li class="mb-1">此註冊頁僅提供預約共享車隊叫車服務，如需預約長照相關業務，請撥打 1966 服務專線，將會有專員提供服務。</li>
-          <li>若已有長照資格，需預約共享車隊服務，請在登入後選擇用戶專區進行服務開通。</li>
+          <li>此註冊頁僅提供預約共享車隊叫車服務，如需預約長照相關業務，請撥打 1966 服務專線，將會有專員提供服務。</li>
+          <!-- <li>若已有長照資格，需預約共享車隊服務，請在登入後選擇用戶專區進行服務開通。</li> -->
         </ol>
       </form>
     </div>
@@ -29,10 +29,11 @@ import { mapActions, mapState} from 'vuex'
 
 export default {
   name: "login",
-  middleware: ['authorization'],
+  // mounted() {
+  // },
   data() {
     return {
-      form: {
+      userInfo: {
         username: 'A179697467',
         password: 'Aa123456'
       }
@@ -40,10 +41,27 @@ export default {
   },
   methods: {
     ...mapActions(['Login']),
-    doLogin() {
+    async doLogin() {
       console.log('doLogin')
-      console.log($api);
-      console.log(this.token);
+      this.Login(this.userInfo).then((res)=> {
+        const {code, message} = res.data
+        if(code == 200) {
+          this.$swal.fire({
+            icon: 'success',
+            title: '登入成功',
+            confirmButtonText: '確認',
+            focusConfirm: true
+          }).then(this.$router.replace({name: 'news'}))
+        } else {
+          this.$swal.fire({
+            icon: 'error',
+            title: '登入失敗',
+            text: message,
+            confirmButtonText: '確認',
+            focusConfirm: true
+          })
+        }
+      })
     }
   },
   computed: {

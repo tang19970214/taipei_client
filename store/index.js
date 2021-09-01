@@ -1,10 +1,13 @@
-import { getToken, setToken, removeToken } from '../api/auth'
+import { setToken, removeToken } from '../api/auth'
 import $api from '../api/api'
 
 export const state = () => ({
   token: null,
 })
-
+/**
+ * @author Jung
+ * cookie、localStorage、store
+ */
 export const  mutations = {
   setToken(state, token){
     state.token = token
@@ -21,37 +24,41 @@ export const actions = {
         .then((response) => {
           const data = response.data
           setToken(data.token)
-          window.localStorage.setItem("tokenClient", data.token)
-          commit("SET_TOKEN", data.token)
-          resolve()
+          window.localStorage.setItem("taipei_client", data.token)
+          commit("setToken", data.token)
+          resolve(response)
         })
         .catch((error) => {
           reject(error)
         })
     })
   },
-  authenticateUser(vuexContext, authData){
-    vuexContext.commit('setToken',result.idToken)
-    localStorage.setItem('token', result.idToken)
-    setToken(result.idToken)
-  },
-  initAuth(vuexContext, req){
+  initAuth(vuexContext, req){ // have called by middlewate
+    console.log(vuexContext);
     let token = null
     if(req){
       if(!req.headers.cookie){
         return;
-      }  
+      }
+      const jwtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith("taipei_client="))
+      if(!jwtCookie) return
+      token = jwtCookie.split('=')[1]
     }else if(process.client){
-      token = localStorage.getItem('token')
+      token = localStorage.getItem('taipei_client')
+    }
+
+    if(!token){
+      vuexContext.dispatch('logout')
+      return;
     }
     vuexContext.commit('setToken', token)
   },
   logout(vuexContext){
+    removeToken('taipei_client')
     vuexContext.commit('clearToken')
-    removeToken('jwt')
     
     if(process.client){
-      localStorage.removeItem("token")
+      localStorage.removeItem("taipei_client")
     }
   }
 }

@@ -16,7 +16,7 @@ export const  mutations = {
 export const actions = {
   authenticateUser(vuexContext, authData){
     vuexContext.commit('setToken',result.idToken)
-    localStorage.setItem('token', result.idToken)
+    localStorage.setItem('taipei_client', result.idToken)
     setToken(result.idToken)
   },
   initAuth(vuexContext, req){
@@ -26,16 +26,16 @@ export const actions = {
         return;
       }  
     }else if(process.client){
-      token = localStorage.getItem('token')
+      token = localStorage.getItem('taipei_client')
     }
     vuexContext.commit('setToken', token)
   },
   logout(vuexContext){
     vuexContext.commit('clearToken')
-    removeToken('jwt')
+    removeToken('taipei_client')
     
     if(process.client){
-      localStorage.removeItem("token")
+      localStorage.removeItem("taipei_client")
     }
   }
 }

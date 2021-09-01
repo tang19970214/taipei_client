@@ -14,7 +14,8 @@
     "dayjs": "^1.10.6",
     "js-cookie": "^3.0.0",
     "nuxt": "^2.15.7",
-    "vue-tailwind": "^2.4.2"
+    "vue-tailwind": "^2.4.2",
+    "sweetalert2": "^11.0.18"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",

@@ -1,9 +1,8 @@
 import Cookies from "js-cookie";
 
-const TokenKey = "token";
+const TokenKey = "taipei_client";
 
 export function getToken() {
-  console.log(TokenKey);
   return Cookies.get(TokenKey);
 }
 

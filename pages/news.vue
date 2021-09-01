@@ -25,7 +25,7 @@
       </div>
 
       <div class="w-full min-h-list py-8 box-border bg-gray-300 flex items-center justify-center" v-else>
-        <img src="../static/images/noData.svg" alt="暫無數據">
+        <img src="../static/images/noData.svg" alt="暫無數據" />
       </div>
     </div>
 

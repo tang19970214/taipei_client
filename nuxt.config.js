@@ -29,6 +29,7 @@ export default {
     {src: '~/plugins/vue-tailwind', ssr: false},
     '~/plugins/apis',
     '~/plugins/days',
+    '~/plugins/sweet-alert',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -53,6 +54,6 @@ export default {
   build: {
   },
   router:{
-    middleware: ['log','authorization']
+    middleware: ['log','check-auth','authorization']
   }
 }

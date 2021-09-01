@@ -8,13 +8,18 @@ const api = {
     return request({
       url: "/check/login",
       method: "post",
+      // data: {
+      //   account: username,
+      //   password: password,
+      //   appKey: "Client",
+      //   mobileDevice: "",
+      //   pushKey: "",
+      // },
       data: {
-        account: username,
-        password: password,
-        appKey: "Client",
-        mobileDevice: "",
-        pushKey: "",
-      },
+        Account: "A179697467",
+        AppKey: "SYS_USERTYPE_CLIENT",
+        Password: "Aa123456"
+      }
     })
   },
 

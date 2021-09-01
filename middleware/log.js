@@ -1,3 +1,3 @@
 export default function ({route}){
-    console.log(`[Middleware] route Name:${route.name}`)
-  }
+  console.log(`[Middleware] route Name:${route.name}`)
+}
