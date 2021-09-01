@@ -88,6 +88,7 @@ export default {
     };
   },
   methods: {
+    // FIXME: 點擊有達成選中並依順序active，但目前因push導致list會增加
     chooseCarShop(id) {
       console.log(this.carShopList, id);
       //   const getIndex = this.carShopList.filter((i) => !!i.sort);
