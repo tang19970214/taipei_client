@@ -1,5 +1,11 @@
-.min-h-page {
-  min-height: calc(100vh - 56px);
+.min-h {
+  &-page {
+    min-height: calc(100vh - 56px);
+  }
+
+  &-reservePage {
+    min-height: calc(100vh - 200px);
+  }
 }
 
 .moveR-enter-active,  .moveR-leave-active {

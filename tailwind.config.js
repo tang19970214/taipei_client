@@ -16,8 +16,11 @@ module.exports = {
       info: "#00838F",
       mainTxt: "#FF7A45",
       line: "#1890FF",
+      reserve: "#FFBB96",
       white: colors.white,
+      black: colors.black,
       gray: colors.gray,
+      red: colors.red,
 
       tagsSuccess: "#E8F5E9",
       tagsWarning: "#FFF3E0",

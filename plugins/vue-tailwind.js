@@ -33,6 +33,12 @@ const setting = {
       classes: 'border border-gray-300 block w-full rounded text-gray-800 text-sm px-2 py-1 tracking-wider mb-3'
     }
   },
+  't-select': {
+    component: TSelect,
+    props: {
+      classes: 'border border-gray-300 block w-full rounded text-gray-800 text-sm px-2 py-1 tracking-wider mb-3'
+    }
+  },
   't-button-primary': {
     component: TButton,
     props: {
