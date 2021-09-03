@@ -11,7 +11,7 @@
           <LogoTitle />
         </div>
 
-        <div v-if="$route.path !== '/'" class="absolute top-0 right-4 h-full flex items-center" @click="$router.push('/')">
+        <div v-if="!isAuthenticated" class="absolute top-0 right-4 h-full flex items-center" @click="$router.push('/')">
           <img src="../static/images/login.svg" alt="登入" width="16px">
           <p class="text-white text-sm pl-1">登入</p>
         </div>
@@ -29,6 +29,8 @@
 import Menu from "./svg/Menu";
 import LogoTitle from "./svg/LogoTitle";
 
+import {mapGetters} from 'vuex'
+
 export default {
   components: { Menu, LogoTitle },
   data() {
@@ -36,5 +38,8 @@ export default {
       overlay: false,
     };
   },
+  computed: {
+    ...mapGetters(['isAuthenticated'])
+  }
 };
 </script>

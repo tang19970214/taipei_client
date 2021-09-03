@@ -34,13 +34,11 @@ export const actions = {
     })
   },
   initAuth(vuexContext, req){ // have called by middlewate
-    console.log(vuexContext);
     let token = null
     if(req){
       if(!req.headers.cookie){
         return;
       }
-      console.log(req);
       const jwtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith("taipei_client="))
       if(!jwtCookie) return
       token = jwtCookie.split('=')[1]
@@ -55,12 +53,15 @@ export const actions = {
     vuexContext.commit('setToken', token)
   },
   logout(vuexContext){
-    removeToken('taipei_client')
-    vuexContext.commit('clearToken')
-    
-    if(process.client){
-      localStorage.removeItem("taipei_client")
-    }
+    return new Promise((resolve, reject)=> {
+      removeToken('taipei_client')
+      vuexContext.commit('clearToken')
+      
+      if(process.client){
+        localStorage.removeItem("taipei_client")
+      }
+      resolve()
+    })
   }
 }
 

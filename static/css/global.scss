@@ -1,3 +1,9 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+*{
+  // outline: 1px solid red;
+}
 .min-h {
   &-page {
     min-height: calc(100vh - 56px);
@@ -26,4 +32,26 @@
 .opacityTransition-enter,
 .opacityTransition-leave-active {
   opacity: 0;
+}
+
+a.nuxt-link-active {
+  font-weight: bold;
+}
+
+/* exact link will show the primary color for only the exact matching link */
+// TODO: 之後看一下要用stylelint處理還是怎樣之類的。
+a.nuxt-link-exact-active {
+  @apply text-line #{!important};
+  @apply bg-currentColor relative;
+  &::after{
+    content: '';
+    position: absolute;
+    right: 2px;
+    height: 100%;
+    width: 3px;
+    background-color: theme('colors.line');
+  }
+}
+body{
+  font-family: "Noto Sans TC", sans-serif;
 }
