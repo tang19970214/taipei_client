@@ -13,8 +13,8 @@
           </div>
           <!-- 路由 -->
           <div class="pt-6">
-            <NuxtLink to="contact" class="block flex items-center pl-6 leading-10 text-sm"><ContactSvg /><span class="pl-2">聯繫客服</span></NuxtLink>
-            <NuxtLink to="qAndA" class="block flex items-center pl-6 leading-10 text-sm"><QAndASvg /><span class="pl-2">常見問題</span></NuxtLink>
+            <NuxtLink to="contact" class="block flex items-center pl-6 leading-10 text-sm" @click.native="closeOverlay()"><ContactSvg /><span class="pl-2">聯繫客服</span></NuxtLink>
+            <NuxtLink to="qAndA" class="block flex items-center pl-6 leading-10 text-sm" @click.native="closeOverlay()"><QAndASvg /><span class="pl-2">常見問題</span></NuxtLink>
           </div>
           <!-- 這邊是聯絡資訊 -->
           <div class="grid grid-cols-2">

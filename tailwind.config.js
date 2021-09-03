@@ -26,6 +26,7 @@ module.exports = {
       white: colors.white,
       black: colors.black,
       gray: colors.gray,
+      grayBGDefault: '#DBE4E8',
       red: colors.red,
 
       tagsSuccess: "#E8F5E9",

@@ -20,6 +20,9 @@ export default function ({store, redirect, route}){
       case 'news':
         // 如果已經在最新消息頁頁，不處理
         break;
+      case 'qAndA':
+        // 如果已經在最新消息頁頁，不處理
+        break;
       default:
         redirect({name: 'index'})
         break;
