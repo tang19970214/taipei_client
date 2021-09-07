@@ -36,6 +36,16 @@
   opacity: 0;
 }
 
+.collapseTransition-enter-active,
+.collapseTransition-leave-active {
+  transition:  0.3s;
+  max-height: 100vh;
+}
+.collapseTransition-enter,
+.collapseTransition-leave-active {
+  max-height: 0;
+}
+
 a.nuxt-link-active {
   font-weight: bold;
 }
